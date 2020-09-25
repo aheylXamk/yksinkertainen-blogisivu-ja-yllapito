@@ -1,0 +1,25 @@
+<%- include("includes/header") -%>
+
+<div class="container">
+
+    <form method="POST" action="/tallenna" onSubmit="return kirjoitaUusi()">
+
+        <%
+            let nyt = new Date();
+        %>
+
+        <%=nyt.getDate()%>.<%=nyt.getMonth()+1%>.<%=nyt.getFullYear()%> <%=nyt.getHours()%>:<%=nyt.getMinutes()%>
+        <input type="text" name="nimimerkki" value="Heini" class="form-control">
+        <input type="text" name="otsikko" placeholder="Otsikko.." class="form-control">
+        <textarea name="teksti" class="form-control"></textarea>
+                <script>
+                        CKEDITOR.replace( 'teksti' );
+                </script>
+        <input type="submit" name="tallenna" value="Julkaise kirjoitus blogiin" class="btn btn-primary">
+
+    </form>    
+
+
+</div>
+
+<%- include("includes/footer") -%>

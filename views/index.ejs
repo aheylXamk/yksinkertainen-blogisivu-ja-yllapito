@@ -1,0 +1,25 @@
+<%- include("includes/header") -%>
+
+<div class="container">
+
+
+    <h1>Blogikirjoituksia</h1>
+
+    <% kirjoitukset.forEach( (kirjoitus) => { %>
+
+    <% let aika = new Date(kirjoitus.paivamaara); %>
+
+   
+
+    <h3><%= kirjoitus.otsikko %></h3>
+    <p><%= aika.getDate() %>.<%= aika.getMonth()+1 %>.<%= aika.getFullYear()%> <%=aika.getHours()%>:<%=aika.getMinutes()%>, Kirjoittaja: <%= kirjoitus.nimimerkki %></p>
+    <p><%- kirjoitus.teksti %></p>
+
+
+
+    <%  }); %>
+
+
+</div>
+
+<%- include("includes/footer") -%>
